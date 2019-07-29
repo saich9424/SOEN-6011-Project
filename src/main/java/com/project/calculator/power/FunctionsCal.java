@@ -13,7 +13,7 @@ public class FunctionsCal {
 
 		double n=1;
 
-		for (int i=1;n>1E-123   ;i++) { 
+		for (int i=1;n>1E-74|| -n> 1E-74  ;i++) { 
 
 			n= power(val, i)/factorial(i);
 			System.out.println("power value is"+power(val,i));
@@ -38,7 +38,7 @@ public class FunctionsCal {
 				valueCheck=valueCheck.substring(valueCheck.indexOf('E')+1,valueCheck.length());
 
 				int value=Integer.parseInt(valueCheck);
-				if(value>21)
+				if(value>74)
 				{
 					break;
 				}
