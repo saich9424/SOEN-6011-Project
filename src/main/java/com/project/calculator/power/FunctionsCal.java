@@ -1,5 +1,4 @@
 package com.project.calculator.power;
-import java.util.Scanner;
 
 public class FunctionsCal {
 
@@ -16,7 +15,7 @@ public class FunctionsCal {
 
 		for (int i=1;n>1E-123   ;i++) { 
 
-			n= Math.pow(val, i)/factorial(i);
+			n= power(val, i)/factorial(i);
 			System.out.println("power value is"+power(val,i));
 			System.out.println("fact value is"+factorial(i) );
 
@@ -54,6 +53,11 @@ public class FunctionsCal {
 	
 
 
+	/**
+	 * Calculates the factorial of given number.
+	 * @param n The number whose factorial needs to be calculated.
+	 * @return Calculates the factorial and returns the value.
+	 */
 	static double factorial(int n){    
 		if (n == 0)    
 			return 1;    
@@ -62,10 +66,10 @@ public class FunctionsCal {
 	} 
 
 	/**
-	 * This function calculates the 
-	 * @param x
-	 * @param y
-	 * @return
+	 * This function calculates the NaturalLog of the numbers which is mainly for real numbers.
+	 * @param x Calculates the ln of the number.
+	 * @param y Multiplies ln result with y .
+	 * @return returns the value of e^yln(x) value.
 	 */
 	static double calLn(double x,double y)
 	{
@@ -111,6 +115,12 @@ public class FunctionsCal {
 
 	}
 	
+	/**
+	 * Calculates the power of the two given numbers.
+	 * @param x it is the base value.
+	 * @param y It is the exponent value.
+	 * @return returns the power of two given numbers.
+	 */
 	static double power(double x, double  y)
 	{
 		if(y==0)
