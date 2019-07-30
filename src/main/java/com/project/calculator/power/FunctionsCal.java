@@ -1,8 +1,18 @@
 package com.project.calculator.power;
 
+/**
+ * It has all the functions to perform the power
+ * @author saich9424
+ *
+ */
 public class FunctionsCal {
 
 
+	/**
+	 * Calculates the e value of the given number.
+	 * @param r The number whose exponent need to be calculated.
+	 * @return It return the calculated exponent value.
+	 */
 	public static double calExponent(double r)
 	{
 
@@ -13,15 +23,11 @@ public class FunctionsCal {
 
 		double n=1;
 
-		for (int i=1;n>1E-74|| -n> 1E-74  ;i++) { 
+		for (int i=1;n>1E-306|| -n> 1E-306  ;i++) { 
 
-			n= power(val, i)/factorial(i);
-			System.out.println("power value is"+power(val,i));
-			System.out.println("fact value is"+factorial(i) );
-
-
-			v=v+n;  System.out.println("N value is" +n);
-			System.out.println("result value is"+v);
+			n= n*val/i;
+			v=v+n;  
+			
 			if(Double.isInfinite(n))
 			{
 				v=n;
@@ -31,26 +37,26 @@ public class FunctionsCal {
 			{
 				break;
 			}
-			
+
 			String valueCheck= String.valueOf(n);
 			if(valueCheck.contains("E"))
 			{
 				valueCheck=valueCheck.substring(valueCheck.indexOf('E')+1,valueCheck.length());
 
 				int value=Integer.parseInt(valueCheck);
-				if(value>74)
+				if(value>306)
 				{
 					break;
 				}
 			}
-			
+
 		}
 		return v;
 
 
 	}
 
-	
+
 
 
 	/**
@@ -59,10 +65,14 @@ public class FunctionsCal {
 	 * @return Calculates the factorial and returns the value.
 	 */
 	static double factorial(int n){    
-		if (n == 0)    
+		if (n == 0) 
+		{
 			return 1;    
+		}
 		else    
-			return(n * factorial(n-1));    
+		{
+			return(n * factorial(n-1));  
+		}
 	} 
 
 	/**
@@ -92,14 +102,22 @@ public class FunctionsCal {
 			{
 				break;
 			}
-			if(j==100000)
+			if(j==80000)
 			{
 				break;
 			}
-			System.out.println("N value is" +n);
+			String valueCheck= String.valueOf(z);
 
-			System.out.println("j value is"+j);
-			System.out.println("result value is"+z);
+			if(valueCheck.contains("E"))
+			{
+				valueCheck=valueCheck.substring(valueCheck.indexOf('E')+1,valueCheck.length());
+
+				int value=Integer.parseInt(valueCheck);
+				if(value>278)
+				{
+					break;
+				}
+			}
 		}
 		if(infFlag)
 		{
@@ -114,17 +132,20 @@ public class FunctionsCal {
 		}
 
 	}
-	
+
 	/**
 	 * Calculates the power of the two given numbers.
 	 * @param x it is the base value.
 	 * @param y It is the exponent value.
 	 * @return returns the power of two given numbers.
 	 */
+	
 	static double power(double x, double  y)
 	{
 		if(y==0)
+		{
 			return 1;
+		}
 		if(x==1)
 		{
 			return 1;
